@@ -11,7 +11,8 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\menga\Documents\Code\InsectaCam\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / \
+    Path(r"C:\Users\menga\Documents\Code\InsectaCam\build\assets\frame0")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -20,34 +21,34 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
-window.geometry("700x550")
-window.configure(bg = "#FFFFFF")
+window.geometry("700x480")
+window.configure(bg="#F2E8CF")
 
 
 canvas = Canvas(
     window,
-    bg = "#FFFFFF",
-    height = 550,
-    width = 700,
-    bd = 0,
-    highlightthickness = 0,
-    relief = "ridge"
+    bg="#F2E8CF",
+    height=480,
+    width=700,
+    bd=0,
+    highlightthickness=0,
+    relief="ridge"
 )
 
-canvas.place(x = 0, y = 0)
+canvas.place(x=0, y=0)
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
     454.0,
-    178.0,
+    155.0,
     image=image_image_1
 )
 
 image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
-    603.0,
-    178.0,
+    128.0,
+    323.0,
     image=image_image_2
 )
 
@@ -55,7 +56,7 @@ image_image_3 = PhotoImage(
     file=relative_to_assets("image_3.png"))
 image_3 = canvas.create_image(
     128.0,
-    346.0,
+    235.0,
     image=image_image_3
 )
 
@@ -63,174 +64,174 @@ image_image_4 = PhotoImage(
     file=relative_to_assets("image_4.png"))
 image_4 = canvas.create_image(
     128.0,
-    258.0,
+    147.0,
     image=image_image_4
 )
 
 image_image_5 = PhotoImage(
     file=relative_to_assets("image_5.png"))
 image_5 = canvas.create_image(
-    128.0,
-    170.0,
+    350.0,
+    48.0,
     image=image_image_5
 )
 
-image_image_6 = PhotoImage(
-    file=relative_to_assets("image_6.png"))
-image_6 = canvas.create_image(
-    350.0,
-    48.0,
-    image=image_image_6
-)
-
 canvas.create_text(
-    13.0,
-    11.0,
+    93.0,
+    10.0,
     anchor="nw",
     text="InsectaCam ",
-    fill="#FFFFFF",
+    fill="#F2E8CF",
     font=("Inter", 50 * -1, "bold")
 )
 
 canvas.create_text(
     64.0,
-    158.0,
+    137.0,
     anchor="nw",
     text="Image uploader",
     fill="#000000",
-    font=("Inter", 16 * -1, "bold")
+    font=("Inter", 16 * -1)
 )
 
 canvas.create_text(
     64.0,
-    249.0,
+    226.0,
     anchor="nw",
     text="Insects detected",
     fill="#000000",
-    font=("Inter", 16 * -1, "bold")
+    font=("Inter", 16 * -1)
 )
 
 canvas.create_text(
-    44.0,
-    337.0,
+    60.0,
+    314.0,
     anchor="nw",
     text="Insects type detected\n",
     fill="#000000",
-    font=("Inter", 16 * -1, "bold")
+    font=("Inter", 16 * -1)
+)
+
+image_image_6 = PhotoImage(
+    file=relative_to_assets("image_6.png"))
+image_6 = canvas.create_image(
+    454.0,
+    371.0,
+    image=image_image_6
 )
 
 image_image_7 = PhotoImage(
     file=relative_to_assets("image_7.png"))
 image_7 = canvas.create_image(
     454.0,
-    394.0,
+    243.0,
     image=image_image_7
+)
+
+canvas.create_text(
+    333.0,
+    320.0,
+    anchor="nw",
+    text="Lucila flies detected\n\n",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1)
+)
+
+canvas.create_text(
+    333.0,
+    390.0,
+    anchor="nw",
+    text="Pyophilic flies detected\n",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1)
+)
+
+canvas.create_text(
+    333.0,
+    355.0,
+    anchor="nw",
+    text="House flies detected\n",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1)
+)
+
+canvas.create_text(
+    333.0,
+    234.0,
+    anchor="nw",
+    text="Numbers of flies detected ",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1)
+)
+
+canvas.create_text(
+    333.0,
+    146.0,
+    anchor="nw",
+    text="File selected",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1)
+)
+
+canvas.create_text(
+    290.0,
+    320.0,
+    anchor="nw",
+    text="20",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1, "bold")
+)
+
+canvas.create_text(
+    290.0,
+    234.0,
+    anchor="nw",
+    text="65",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1, "bold")
+)
+
+canvas.create_text(
+    290.0,
+    146.0,
+    anchor="nw",
+    text="0",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1, "bold")
+)
+
+canvas.create_text(
+    290.0,
+    356.0,
+    anchor="nw",
+    text="35",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1, "bold")
+)
+
+canvas.create_text(
+    290.0,
+    392.0,
+    anchor="nw",
+    text="10",
+    fill="#F2E8CF",
+    font=("Inter", 16 * -1, "bold")
 )
 
 image_image_8 = PhotoImage(
     file=relative_to_assets("image_8.png"))
 image_8 = canvas.create_image(
-    454.0,
-    266.0,
+    49.0,
+    47.0,
     image=image_image_8
-)
-
-canvas.create_text(
-    319.0,
-    344.0,
-    anchor="nw",
-    text="Lucila flies detected\n\n",
-    fill="#000000",
-    font=("Inter", 16 * -1)
-)
-
-canvas.create_text(
-    319.0,
-    414.0,
-    anchor="nw",
-    text="Pyophilic flies detected\n",
-    fill="#000000",
-    font=("Inter", 16 * -1)
-)
-
-canvas.create_text(
-    319.0,
-    379.0,
-    anchor="nw",
-    text="House flies detected\n",
-    fill="#000000",
-    font=("Inter", 16 * -1)
-)
-
-canvas.create_text(
-    319.0,
-    256.0,
-    anchor="nw",
-    text="Numbers of flies detected ",
-    fill="#000000",
-    font=("Inter", 16 * -1)
-)
-
-canvas.create_text(
-    319.0,
-    164.0,
-    anchor="nw",
-    text="File selected",
-    fill="#000000",
-    font=("Inter", 16 * -1)
 )
 
 image_image_9 = PhotoImage(
     file=relative_to_assets("image_9.png"))
 image_9 = canvas.create_image(
-    346.0,
-    46.0,
+    616.0,
+    155.0,
     image=image_image_9
-)
-
-canvas.create_text(
-    274.0,
-    344.0,
-    anchor="nw",
-    text="20",
-    fill="#000000",
-    font=("Inter", 16 * -1, "bold")
-)
-
-canvas.create_text(
-    274.0,
-    257.0,
-    anchor="nw",
-    text="65",
-    fill="#000000",
-    font=("Inter", 16 * -1, "bold")
-)
-
-canvas.create_text(
-    279.0,
-    163.0,
-    anchor="nw",
-    text="0",
-    fill="#000000",
-    font=("Inter", 16 * -1, "bold")
-)
-
-canvas.create_text(
-    274.0,
-    379.0,
-    anchor="nw",
-    text="35",
-    fill="#000000",
-    font=("Inter", 16 * -1, "bold")
-)
-
-canvas.create_text(
-    275.0,
-    414.0,
-    anchor="nw",
-    text="10",
-    fill="#000000",
-    font=("Inter", 16 * -1, "bold")
 )
 window.resizable(False, False)
 window.mainloop()
