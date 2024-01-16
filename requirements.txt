@@ -1,2 +1,7 @@
 fastai
-pillow
+Pillow
+tkinter
+IPython
+duckduckgo_search
+fastcore
+fastdownload
