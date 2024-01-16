@@ -5,3 +5,4 @@ IPython
 duckduckgo_search
 fastcore
 fastdownload
+customtkinter
