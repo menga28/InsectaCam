@@ -22,7 +22,7 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
-path = Path('src\Model\insectaCamModel.pkl')
+path = Path('src\model\insectaCamModel.pkl')
 learn = load_learner(path)
 
 
