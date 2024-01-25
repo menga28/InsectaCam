@@ -282,6 +282,6 @@ canvas.create_text(
     font=("Inter", 16 * -1)
 )
 
-
+window.title("InsectaCam")
 window.resizable(False, False)
 window.mainloop()
