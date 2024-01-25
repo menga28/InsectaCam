@@ -6,3 +6,4 @@ duckduckgo_search
 fastcore
 fastdownload
 customtkinter
+getpass

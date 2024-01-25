@@ -4,12 +4,14 @@
 
 import os
 import csv
+from datetime import datetime
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 from PIL import Image as PilImage, ImageTk
 from IPython.display import display, Image as IPImage, HTML
 import easygui
+import getpass
 from pathlib import Path
 from fastai.vision.all import *
 
@@ -35,20 +37,45 @@ def update_image(ipath):
 
 def file_dialog():
     path = easygui.fileopenbox(msg="Choose file", title="InsectaCam",  filetypes=[
-                               "*.png", "*.jpg"], multiple=False, default="//*.png")
-    # Aggiungi questa linea per utilizzare il percorso del file selezionato
+        "*.png", "*.jpg"], multiple=False, default="//*.png")
     process_file(path)
     update_image(path)
 
 
+def generate_csv(file_path, probs, start_time, end_time, csv_file_path="output_data.csv"):
+    user_name = getpass.getuser()
+    fieldnames = [
+        "File selected",
+        "Probability for Lucila", "Probability for Mosca Domestica", "Probability for Piofila",
+        "User Name", "Start Time", "End Time"
+    ]
+    with open(csv_file_path, mode="a", newline="", encoding="utf-8") as csv_file:
+        csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        if csv_file.tell() == 0:
+            csv_writer.writeheader()
+        csv_writer.writerow({
+            "File selected": file_path,
+            "Probability for Lucila": f"{probs[0]:.4f}",
+            "Probability for Mosca Domestica": f"{probs[1]:.4f}",
+            "Probability for Piofila": f"{probs[2]:.4f}",
+            "User Name": user_name,
+            "Start Time": start_time.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3],
+            "End Time": end_time.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        })
+
+
 def process_file(file_path):
-    _, _, probs = learn.predict(PILImage.create(
-        file_path))  # Esegui la previsione
-    # Stampa le probabilità per ogni classe
+    start_time = datetime.now()
+    _, _, probs = learn.predict(PILImage.create(file_path))
+    end_time = datetime.now()
+    generate_csv(file_path, probs, start_time, end_time)
+    update_probs(probs)
+
+
+def update_probs(probs):
     canvas.itemconfig(tagOrId=lsPercentage, text=f"{100*probs[0]:.1f}%")
     canvas.itemconfig(tagOrId=mdPercentage, text=f"{100*probs[1]:.1f}%")
     canvas.itemconfig(tagOrId=pcPercentage, text=f"{100*probs[2]:.1f}%")
-
     if (100*probs[0] > 50):
         canvas.itemconfig(tagOrId=speciesDetected,
                           text="Lucilia Sericata Detected")
