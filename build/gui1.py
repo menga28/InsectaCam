@@ -37,7 +37,7 @@ def update_image(ipath):
 
 def file_dialog():
     path = easygui.fileopenbox(msg="Choose file", title="InsectaCam",  filetypes=[
-        "*.png", "*.jpg"], multiple=False, default="//*.png")
+        "*.png", "*.jpg"], multiple=False, default="H:/Il mio Drive/Personal/University/Master's/Complex System Desygn/InsectaCam/Test/*.png")
     process_file(path)
     update_image(path)
 
@@ -126,7 +126,7 @@ canvas.create_text(
     115.0,
     11.0,
     anchor="nw",
-    text="InsectaCam",
+    text="InsectaCam - Single",
     fill="#F2E8CF",
     font=("Inter", 50 * -1)
 )
