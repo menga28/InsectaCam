@@ -11,27 +11,13 @@ class singleInsectGUI(Canvas):
     
     def __init__(self, master):
     
-        #Frame.__init__(self,master,bg="red",height=383,width=994)
         Canvas.__init__(self, master,bg="#F2E8CF",height=480, width=994,bd=0,highlightthickness=0,relief="ridge")
         self.master = master
         self.place(x=0,y=0)
-        #self.pack_propagate(False)
         self.drawgui()
 
             
     def drawgui(self):
-        # MAIN WINDOW
-        # self.C = Canvas(
-        #     self,
-        #     bg="#F2E8CF",
-        #     height=480,
-        #     width=994,
-        #     bd=0,
-        #     highlightthickness=0,
-        #     relief="ridge"
-        # )
-        # #self.C.pack()
-        # self.C.place(x=0, y=0)
         
         # TITLE BAR INSECTACAM + PICTURE
         self.image2 = PhotoImage(file=relative_to_assets("image_2.png"))
