@@ -2,8 +2,8 @@ fastai
 Pillow
 tkinter
 IPython
-duckduckgo_search
 fastcore
 fastdownload
 customtkinter
 getpass
+easygui
