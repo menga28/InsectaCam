@@ -1,2 +1,4 @@
 *.pkl
 *.pth
+notebook/first-output.csv
+notebook/output.csv
